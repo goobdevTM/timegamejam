@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://mmvmr5v6583m" path="res://scripts/player.gd" id="1_lbhrr"]
 [ext_resource type="Script" uid="uid://c283773aqnwn2" path="res://scripts/level.gd" id="1_yqjtg"]
-[ext_resource type="Texture2D" uid="uid://d4kye1gxi2rte" path="res://assets/sprites/player.png" id="2_iywne"]
 [ext_resource type="Texture2D" uid="uid://d1ekra4nne3d4" path="res://assets/sprites/atlas.png" id="2_lnu2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
@@ -49,7 +48,7 @@ script = ExtResource("1_yqjtg")
 to_outline = [NodePath("Ground"), NodePath("Background")]
 
 [node name="Background" type="TileMapLayer" parent="Level" unique_id=1160583777]
-modulate = Color(1, 1, 1, 0.78431374)
+modulate = Color(1, 1, 1, 0.64705884)
 tile_map_data = PackedByteArray("AAACAP//AAACAAAAAAACAP7/AAACAAAAAAACAP3/AAAAAAEAAAABAP3/AAAAAAEAAAADAP3/AAAAAAEAAAACAPz/AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_u5sy4")
 collision_enabled = false
@@ -67,8 +66,7 @@ position_smoothing_speed = 8.0
 position = Vector2(0, -8)
 script = ExtResource("1_lbhrr")
 
-[node name="Sprite" type="Sprite2D" parent="Player" unique_id=99267594]
-texture = ExtResource("2_iywne")
+[node name="Sprite" type="AnimatedSprite2D" parent="Player" unique_id=1987527240]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=662655978]
 shape = SubResource("CircleShape2D_lbhrr")
