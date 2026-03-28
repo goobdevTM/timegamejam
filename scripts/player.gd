@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var camera: Camera2D = $"../Camera"
+@onready var sprite: AnimatedSprite2D = $Sprite
 
 const SPEED : float = 160.0
 const JUMP_VELOCITY : float = -250.0
@@ -19,7 +20,8 @@ var last_movement_length : float = 0
 
 var double_jump : int = 1
 
-
+#VISUAL
+var current_animation : String = "idle"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -47,6 +49,10 @@ func _physics_process(delta: float) -> void:
 			double_jump -= 1
 		buffer_jump = 0
 		coyote_time = 0
+		
+		#VISUAL
+		current_animation = "idle"
+		
 	if jumping and not Input.is_action_pressed("jump") and velocity.y < -6:
 		velocity.y /= 2
 		jumping = false
@@ -67,11 +73,22 @@ func _physics_process(delta: float) -> void:
 		if not last_direction:
 			last_movement_length = 0
 		last_movement_length += delta
+		
+		#VISUAL
+		sprite.flip_h = direction_facing + 1
+		current_animation = "walk"
+		
 	else:
+		
 		velocity.x = lerp(velocity.x, 0.0, delta * 15)
+		
+		#VISUAL
+		current_animation = "idle"
 		
 	last_direction = direction
 	
 	camera.position = lerp(camera.position, position, delta * 8)
-
+	
+	sprite.play(current_animation)
+	
 	move_and_slide()

@@ -21,6 +21,7 @@ window/size/viewport_width=640
 window/size/viewport_height=480
 window/size/mode=2
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://nek87lx73cua"
 
 [input]
 
@@ -53,3 +54,4 @@ jump={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0.9666667, 1, 1)
