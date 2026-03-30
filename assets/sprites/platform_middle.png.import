@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpehagdj5aqh4"
-path="res://.godot/imported/timegun - NOT USING COLORS (i wil fix).png-1e17f3283fe2867eefddebc5135f0448.ctex"
+uid="uid://c6birg3pqmmsx"
+path="res://.godot/imported/platform_middle.png-b58a8d7eca480a8a0ddf9173414cd521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/timegun - NOT USING COLORS (i wil fix).png"
-dest_files=["res://.godot/imported/timegun - NOT USING COLORS (i wil fix).png-1e17f3283fe2867eefddebc5135f0448.ctex"]
+source_file="res://assets/sprites/platform_middle.png"
+dest_files=["res://.godot/imported/platform_middle.png-b58a8d7eca480a8a0ddf9173414cd521.ctex"]
 
 [params]
 

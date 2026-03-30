@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://mmvmr5v6583m" path="res://scripts/player.gd" id="1_lbhrr"]
 [ext_resource type="Script" uid="uid://c283773aqnwn2" path="res://scripts/level.gd" id="1_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://d1ekra4nne3d4" path="res://assets/sprites/atlas.png" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cwps15cil8dc8" path="res://scenes/moving_platform.tscn" id="3_gee14"]
 [ext_resource type="Texture2D" uid="uid://d4kye1gxi2rte" path="res://assets/sprites/player.png" id="4_lbhrr"]
-[ext_resource type="AudioStream" uid="uid://cvmbkv7x6cbnh" path="res://assets/Audio/Music/Timed Out.ogg" id="5_iywne"]
-[ext_resource type="Texture2D" uid="uid://bpehagdj5aqh4" path="res://assets/sprites/timegun - NOT USING COLORS (i wil fix).png" id="5_p57ef"]
+[ext_resource type="AudioStream" uid="uid://cvmbkv7x6cbnh" path="res://assets/audio/music/Timed Out.ogg" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://bpehagdj5aqh4" path="res://assets/sprites/timegun.png" id="5_p57ef"]
 [ext_resource type="Script" uid="uid://blqaarw3bo0x6" path="res://scripts/timegun.gd" id="5_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
@@ -122,13 +123,19 @@ animation = &"idle"
 shape = SubResource("CircleShape2D_lbhrr")
 
 [node name="Timegun" type="Node2D" parent="Player" unique_id=892047570]
+rotation = 6.2831855
 script = ExtResource("5_u5sy4")
 
-[node name="TimegunNotUsingColors(iWilFix)" type="Sprite2D" parent="Player/Timegun" unique_id=945509626]
-position = Vector2(22, -4)
+[node name="Sprite" type="Sprite2D" parent="Player/Timegun" unique_id=945509626]
+position = Vector2(-3, -3)
 texture = ExtResource("5_p57ef")
+centered = false
+flip_v = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1851576713]
 stream = ExtResource("5_iywne")
 volume_db = -10.947
 autoplay = true
+
+[node name="MovingPlatform" parent="." unique_id=884647119 instance=ExtResource("3_gee14")]
+position = Vector2(-43, -39)

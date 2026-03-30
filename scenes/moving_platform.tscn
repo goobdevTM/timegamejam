@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cwps15cil8dc8"]
+
+[ext_resource type="Script" uid="uid://dpvp6r0criowc" path="res://scripts/moving_platform.gd" id="1_1tdcd"]
+[ext_resource type="Texture2D" uid="uid://c6birg3pqmmsx" path="res://assets/sprites/platform_middle.png" id="1_ms375"]
+[ext_resource type="Texture2D" uid="uid://c1m4xx7db6uts" path="res://assets/sprites/platform_left.png" id="2_afg43"]
+[ext_resource type="Texture2D" uid="uid://crpfpbg15b6n3" path="res://assets/sprites/platform_right.png" id="4_pgg5x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afg43"]
+size = Vector2(20, 6)
+
+[node name="MovingPlatform" type="Node2D" unique_id=884647119]
+script = ExtResource("1_1tdcd")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=546508747]
+
+[node name="Left" type="TextureRect" parent="Sprites" unique_id=1798464993]
+offset_left = -32.0
+offset_right = -16.0
+offset_bottom = 16.0
+texture = ExtResource("2_afg43")
+stretch_mode = 1
+
+[node name="Middle" type="TextureRect" parent="Sprites" unique_id=1302432885]
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("1_ms375")
+stretch_mode = 1
+
+[node name="Right" type="TextureRect" parent="Sprites" unique_id=1654948827]
+offset_left = 16.0
+offset_right = 32.0
+offset_bottom = 16.0
+texture = ExtResource("4_pgg5x")
+stretch_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1866881659]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1260732124]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_afg43")
+one_way_collision = true

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var camera: Camera2D = $"../Camera"
 @onready var sprite: AnimatedSprite2D = $Sprite
@@ -75,7 +76,7 @@ func _physics_process(delta: float) -> void:
 		last_movement_length += delta
 		
 		#VISUAL
-		sprite.flip_h = direction_facing + 1
+		sprite.flip_h = get_global_mouse_position().x > global_position.x
 		current_animation = "walk"
 		
 	else:
