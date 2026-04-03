@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Timed out"
-run/main_scene="uid://c8peneq4osfxu"
+run/main_scene="uid://deguarw82jkwv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

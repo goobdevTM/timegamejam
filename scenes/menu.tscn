@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://deguarw82jkwv"]
 
+[ext_resource type="Script" uid="uid://bfgkqsqks7y6" path="res://scripts/menu.gd" id="1_vjb58"]
 [ext_resource type="Script" uid="uid://p7rajw26aq2o" path="res://scripts/button_animations.gd" id="1_yqeox"]
 
 [node name="Menu" type="Control" unique_id=1424078367]
@@ -9,15 +10,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vjb58")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=361824570]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -16.0
+offset_right = 120.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
 script = ExtResource("1_yqeox")
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=745641978]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
+text = "Play"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=808256406]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Settings"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1587097522]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Quit"
 
 [node name="UISounds" type="Node" parent="." unique_id=812469364]
 
