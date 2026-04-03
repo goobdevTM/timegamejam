@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var raycast: RayCast2D = $RayCast2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
