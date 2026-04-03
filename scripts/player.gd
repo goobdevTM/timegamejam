@@ -11,6 +11,7 @@ var coyote_time : float = 0
 var buffer_jump : float = 0
 var dash_time : float = 0
 var dash_cooldown : float = 0
+var health : float = 100
 
 var jumping : bool = false
 
@@ -25,6 +26,10 @@ var double_jump : int = 1
 var current_animation : String = "idle"
 
 func _physics_process(delta: float) -> void:
+	
+	if health <= 0:
+		die()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		if jumping:
@@ -93,3 +98,11 @@ func _physics_process(delta: float) -> void:
 	sprite.play(current_animation)
 	
 	move_and_slide()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	health -= area.get_parent().damage
+
+func die():
+	position = Vector2(0, 0)
+	health = 100

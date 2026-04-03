@@ -48,3 +48,5 @@ text = "Quit"
 [node name="ClickSound" type="AudioStreamPlayer" parent="UISounds" unique_id=2060817477]
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="UISounds" unique_id=71534981]
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
