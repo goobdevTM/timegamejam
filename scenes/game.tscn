@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cvmbkv7x6cbnh" path="res://assets/audio/music/Timed Out.ogg" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://bpehagdj5aqh4" path="res://assets/sprites/timegun.png" id="5_p57ef"]
 [ext_resource type="Script" uid="uid://blqaarw3bo0x6" path="res://scripts/timegun.gd" id="5_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://j7sg5s8uhhin" path="res://scenes/enemy_basic.tscn" id="8_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://d12t3jf5xtte7" path="res://scenes/enemy_basic.tscn" id="8_0tnpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_lnu2h")
@@ -121,6 +121,7 @@ position_smoothing_speed = 8.0
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1428691781]
 position = Vector2(0, -8)
+collision_layer = 2
 script = ExtResource("1_lbhrr")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Player" unique_id=1987527240]
@@ -141,6 +142,8 @@ centered = false
 flip_v = true
 
 [node name="Hitbox" type="Area2D" parent="Player" unique_id=706311321]
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox" unique_id=1142795423]
 shape = SubResource("CircleShape2D_0tnpc")

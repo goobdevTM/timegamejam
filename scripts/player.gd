@@ -100,8 +100,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func take_damage(from : Enemy) -> void:
+	health -= from.damage
+	if health <= 0:
+		die()
+	
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	health -= area.get_parent().damage
+	if area.get_parent() is Enemy:
+		take_damage(area.get_parent())
 
 func die():
 	position = Vector2(0, 0)
